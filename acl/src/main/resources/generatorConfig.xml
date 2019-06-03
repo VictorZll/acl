@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  <context id="context1" targetRuntime="MyBatis3Simple" >
+    <commentGenerator>
+		<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+		<property name="suppressAllComments" value="true"/>
+  </commentGenerator>
+    <jdbcConnection connectionURL="jdbc:mysql://localhost:3306/db_rbac" driverClass="com.mysql.jdbc.Driver" password="root" userId="root" />
+    <javaModelGenerator targetPackage="com.newroad.acl.system.entity" targetProject="acl/src/main/java" />
+    <sqlMapGenerator targetPackage="com.newroad.acl.system.dao" targetProject="acl/src/main/resources" />
+    <javaClientGenerator targetPackage="com.newroad.acl.system.dao" targetProject="acl/src/main/java" type="XMLMAPPER" />
+    <table schema="" tableName="tb_user_role" domainObjectName="UserRole" mapperName="UserRoleDao">
+      <property value="false" name="useActualColumnNames"/>
+    </table>
+  </context>
+</generatorConfiguration>
