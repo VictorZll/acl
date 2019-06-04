@@ -35,7 +35,8 @@ $(function(){
 // 					iconEl.addClass(newCls);
 // 				}
 				
-	    		alert(node.attributes.url);
+	    		//alert(node.attributes.url);
+	    		location.href=node.attributes.url;
 	    	}
 		},
 		onLoadSuccess:function(node,data){

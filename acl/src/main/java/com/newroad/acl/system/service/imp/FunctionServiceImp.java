@@ -24,4 +24,12 @@ public class FunctionServiceImp implements FunctionServiceIf {
 		return dao.getFunctionsByRoleIdAndParentId(roleIds, parentId);
 	}
 
+	@Override
+	public List<Function> getFunctionsByRoleIdAndFuncType(List<Integer> roleIds, Integer funcType) {
+		if(roleIds==null||roleIds.isEmpty()) {
+			return new ArrayList<Function>();
+		}
+		return dao.getFunctionsByRoleIdAndFuncType(roleIds, funcType);
+	}
+
 }

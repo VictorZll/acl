@@ -26,17 +26,14 @@ public class MenuController {
 	
 	@Resource
 	UserRoleServiceIf userRoleService;
-	@RequestMapping("data_tree")
+	
+	@RequestMapping("/data_tree")
 	@ResponseBody
 	public List<TreeNode> getMenu(String id,HttpSession session){
 
 		List<TreeNode> treeNodes=new ArrayList<TreeNode>();
-		
-		User user=(User) session.getAttribute("user");
-	
-		Integer userId=user.getUserId();
-		
-		List<Integer> roleIds=userRoleService.getRoleIdsByUserId(userId);
+		@SuppressWarnings("unchecked")
+		List<Integer> roleIds=(List<Integer>) session.getAttribute("roleIds");
 		
 		List<Function> funs=null;
 		
@@ -50,18 +47,15 @@ public class MenuController {
 		}
 		//funs->treeNodes
 		for(Function fun:funs) {
-			TreeNode treeNode=new TreeNode();
-			treeNode.setId(fun.getFuncId().toString());
-			treeNode.setText(fun.getFuncName());
-			treeNode.setState(fun.getFuncType()==0?"open":"closed");
-			Map<String, Object> attrs=new HashMap<String, Object>();
-			attrs.put("url", Math.ceil(Math.random()*10));
-			if(fun.getFuncType()==0) {
-				treeNode.setAttributes(attrs);
+			if(fun.getFuncType()!=0) {
+				TreeNode treeNode=new TreeNode();
+				treeNode.setId(fun.getFuncId().toString());
+				treeNode.setText(fun.getFuncName());
+				treeNode.setState(fun.getParentId()!=null?"open":"closed");
+				treeNode.addAttributes("url", fun.getFuncUrl());
+				treeNodes.add(treeNode);
 			}
-			treeNodes.add(treeNode);
 		}
-		
 		return treeNodes;
 	}
 	

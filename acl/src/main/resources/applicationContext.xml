@@ -42,7 +42,7 @@
 <mvc:annotation-driven/>
 <!-- 视图转换器 -->
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
-	<property name="prefix" value="/" ></property>
+	<property name="prefix" value="/WEB-INF/" ></property>
 	<property name="suffix" value=".jsp" ></property>
 </bean>
 <!-- 静态资源处理器 -->

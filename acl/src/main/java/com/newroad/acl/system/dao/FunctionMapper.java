@@ -20,4 +20,6 @@ public interface FunctionMapper {
     int updateByPrimaryKey(Function record);
     
     List<Function> getFunctionsByRoleIdAndParentId(@Param("roleIds")List<Integer> roleIds, @Param("parentId")Integer parentId);
+    
+    List<Function> getFunctionsByRoleIdAndFuncType(@Param("roleIds")List<Integer> roleIds, @Param("funcType")Integer funcType);
 }

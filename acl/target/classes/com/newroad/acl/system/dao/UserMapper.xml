@@ -152,4 +152,10 @@
   <select id="login" resultMap="BaseResultMap">
   select <include refid="Base_Column_List"/> from tb_users where user_name=#{username} and password=#{password}
   </select>
+  <select id="listByPage" resultMap="BaseResultMap" >
+  select <include refid="Base_Column_List"/> from tb_users limit #{offset},#{rows}
+  </select>
+  <select id="getCount" resultType="java.lang.Integer">
+  select count(user_id) from tb_users
+  </select>
 </mapper>

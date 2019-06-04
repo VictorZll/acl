@@ -12,4 +12,11 @@ public interface FunctionServiceIf {
 	 * @return
 	 */
 	List<Function> getFunctionsByRoleIdAndParentId(List<Integer> roleIds ,Integer parentId);
+	/**
+	 * 根据角色Id和权限类型查询权限信息
+	 * @param roleIds
+	 * @param funcType
+	 * @return
+	 */
+	List<Function> getFunctionsByRoleIdAndFuncType(List<Integer> roleIds,Integer funcType);
 }

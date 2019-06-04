@@ -1,6 +1,7 @@
 package com.newroad.acl.system.entity;
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -10,7 +11,7 @@ public class TreeNode implements Serializable{
 	private String text;
 	private String state;
 	private Boolean checked;
-	private Map<String, Object> attributes;
+	private Map<String, Object> attributes=new HashMap<String, Object>();
 	private List<TreeNode> children;
 	public String getId() {
 		return id;
@@ -41,6 +42,9 @@ public class TreeNode implements Serializable{
 	}
 	public void setAttributes(Map<String, Object> attributes) {
 		this.attributes = attributes;
+	}
+	public void addAttributes(String key,Object value) {
+		this.attributes.put(key, value);
 	}
 	public List<TreeNode> getChildren() {
 		return children;

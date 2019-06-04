@@ -170,4 +170,23 @@
   	 </if>
   	 
   </select>
+  
+  <select id="getFunctionsByRoleIdAndFuncType" resultMap="BaseResultMap" >
+  select <include refid="Base_Column_List"/> from tb_functions
+  	where 
+  	func_id in (select func_id from tb_role_function where role_id in 
+  	<foreach collection="roleIds" item="roleId" open="(" close=")" separator=",">
+  		#{roleId}
+  	</foreach>
+  	 ) 
+  	 and 
+  	 <choose>
+  	 	<when test="funcType==null">
+  	 		func_type=0
+  	 	</when>
+  	 	<otherwise>
+  	 		func_type=#{funcType}
+  	 	</otherwise>
+  	 </choose>
+  </select>
 </mapper>

@@ -1,5 +1,6 @@
 package com.newroad.acl.system.entity;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class User {
