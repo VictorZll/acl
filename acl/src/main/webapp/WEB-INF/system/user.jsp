@@ -59,8 +59,7 @@ function loadData(){
 				return "<acl:hasPermission funcCode='system:user:delete'><button>删除用户</button></acl:hasPermission>"+
 				"<acl:hasPermission funcCode='system:user:edit'><button>修改用户</button></acl:hasPermission>"+
 				"<acl:hasPermission funcCode='system:user:grant'><button>授权用户</button></acl:hasPermission>"+
-				"<acl:hasPermission funcCode='system:user:detail'><button>详细信息</button></acl:hasPermission>";
-				
+				"<acl:hasPermission funcCode='system:user:detail'><button>详细信息</button></acl:hasPermission>";	
 		}}
 	]]	
 	});

@@ -39,8 +39,9 @@ public class LoginFilter implements Filter {
 		System.out.println(functionsByCode);
 		
 		//基于uri过滤，实现拦截
-		String[] uris= {"system/user/list"};
+		String[] uris= {"system/user","system/user/list"};
 		Boolean flage=false;
+		System.out.println("uri="+uri);
 		for(int i=0;i<uris.length;i++) {
 			if(uris[i].equals(uri)) {
 				flage=true;

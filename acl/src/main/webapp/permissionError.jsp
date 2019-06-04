@@ -12,5 +12,6 @@
 </head>
 <body>
 您没有该资源的权限
+<a href="login.jsp" >回登录页</a>
 </body>
 </html>
